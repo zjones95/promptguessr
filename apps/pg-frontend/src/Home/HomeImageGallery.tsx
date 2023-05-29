@@ -10,12 +10,13 @@ const HomeImageGallery = () => {
   return (
     <Stack
       position="relative"
-      maxWidth={580}
+      maxWidth={500}
       width="100%"
-      height={400}
+      height={{ xs: 200, sm: 400 }}
       alignItems="center"
       justifyContent="center"
       sx={{
+        pointerEvents: { xs: "none", lg: "auto" },
         "& > *:nth-child(1)": {
           transform: "translateX(-100px) rotate(-15deg)",
         },

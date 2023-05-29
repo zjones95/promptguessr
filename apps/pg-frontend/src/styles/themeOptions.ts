@@ -25,11 +25,12 @@ export const themeOptions: ThemeOptions = {
           "&:hover": {
             backgroundColor: "white",
             color: "#629a8c",
+            borderWidth: "2px",
           },
         },
         root: {
           color: "white",
-          minWidth: "200px",
+          minWidth: "150px",
           fontSize: "1.5rem",
           textTransform: "none",
           height: "60px",
@@ -41,10 +42,7 @@ export const themeOptions: ThemeOptions = {
   typography: {
     fontFamily: "Signika",
     h1: {
-      fontSize: "4rem",
-    },
-    h3: {
-      fontSize: "4rem",
+      fontSize: "3.5rem",
     },
   },
 };

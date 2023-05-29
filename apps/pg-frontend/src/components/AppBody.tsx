@@ -7,6 +7,7 @@ const AppBody = ({ children, ...props }: StackProps) => {
       margin="auto"
       minHeight="calc(100vh - 32px)"
       py={4}
+      px={2}
       {...props}
     >
       {children}

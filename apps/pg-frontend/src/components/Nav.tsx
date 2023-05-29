@@ -5,6 +5,7 @@ const Nav = () => {
     <Stack
       direction="row"
       justifyContent="space-between"
+      alignItems="center"
       height={64}
       align-items="center"
     >

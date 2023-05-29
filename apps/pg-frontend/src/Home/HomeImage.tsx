@@ -5,8 +5,8 @@ const HomeImage = ({ src, ...props }: BoxProps<"img">) => {
     <Box
       component="img"
       src={src}
-      width={300}
-      height={300}
+      width={{ xs: 150, sm: 200, md: 290 }}
+      height={{ xs: 150, sm: 200, md: 290 }}
       border="4px solid"
       borderColor="primary.main"
       position="absolute"
