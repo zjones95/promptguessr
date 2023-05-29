@@ -1,4 +1,5 @@
 import { Button, Stack, Typography } from "@mui/material";
+import HomeImageGallery from "./HomeImageGallery";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
           <Button variant="outlined">Log In</Button>
         </Stack>
       </Stack>
+      <HomeImageGallery />
     </Stack>
   );
 };
