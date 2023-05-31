@@ -6,7 +6,7 @@ export const themeOptions: ThemeOptions = {
     primary: {
       main: "#629a8c",
       light: "#A0C1B9",
-      dark: "#004430",
+      dark: "#006248",
       contrastText: "#ffffff",
     },
     secondary: {

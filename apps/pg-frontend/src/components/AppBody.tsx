@@ -4,10 +4,12 @@ const AppBody = ({ children, ...props }: StackProps) => {
   return (
     <Stack
       maxWidth={1200}
+      height="100%"
       margin="auto"
       minHeight="calc(100vh - 32px)"
-      py={4}
-      px={2}
+      pb={8}
+      pt={4}
+      px={{ xs: 1, md: 2 }}
       {...props}
     >
       {children}

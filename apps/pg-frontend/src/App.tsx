@@ -1,27 +1,32 @@
-import { ThemeProvider, createTheme } from "@mui/material";
 import Nav from "./components/Nav";
-import { themeOptions } from "./styles/themeOptions.ts";
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Home from "./Home/Home.tsx";
 import Footer from "./components/Footer.tsx";
 import AppBody from "./components/AppBody.tsx";
+import RequireUser from "./auth/RequireUser.tsx";
+import Login from "./auth/Login.tsx";
 
 function App() {
-  const theme = createTheme(themeOptions);
-
   return (
     <div id="app">
-      <ThemeProvider theme={theme}>
-        <Router>
-          <AppBody>
-            <Nav />
-            <Routes>
-              <Route path="/" element={<Home />}></Route>
-            </Routes>
-          </AppBody>
-          <Footer />
-        </Router>
-      </ThemeProvider>
+      <AppBody>
+        <Nav />
+        <Routes>
+          {/* -- PUBLIC ROUTES -- */}
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<div>signup</div>} />
+          {/* -- PUBLIC ROUTES -- */}
+          {/* -- AUTHENTICATED ROUTES -- */}
+          <Route element={<RequireUser />}>
+            <Route path="lobbies" element={<div>lobbies</div>} />
+            <Route path="lobby/:id" element={<div>lobby - id</div>} />
+            <Route path="settings" element={<div>settings</div>} />
+            {/* -- AUTHENTICATED ROUTES -- */}
+          </Route>
+        </Routes>
+      </AppBody>
+      <Footer />
     </div>
   );
 }

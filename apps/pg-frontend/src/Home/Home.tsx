@@ -1,7 +1,20 @@
 import { Button, Stack, Typography } from "@mui/material";
 import HomeImageGallery from "./HomeImageGallery";
+import { Link, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useAuth } from "../contexts/AuthProvider";
+import ROUTES from "../routes";
 
 const Home = () => {
+  const navigate = useNavigate();
+  const { user, userIsLoading } = useAuth();
+
+  useEffect(() => {
+    if (user && !userIsLoading) {
+      navigate(ROUTES.LOBBIES);
+    }
+  }, [userIsLoading]);
+
   return (
     <Stack
       direction="row"
@@ -23,8 +36,12 @@ const Home = () => {
           pets try to guess what you wrote.
         </Typography>
         <Stack direction="row" spacing={3} pt={1}>
-          <Button variant="contained">Sign Up</Button>
-          <Button variant="outlined">Log In</Button>
+          <Link to="/signup">
+            <Button variant="contained">Sign Up</Button>
+          </Link>
+          <Link to="/login">
+            <Button variant="outlined">Log In</Button>
+          </Link>
         </Stack>
       </Stack>
       <HomeImageGallery />
