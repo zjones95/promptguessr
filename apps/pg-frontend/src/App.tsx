@@ -3,8 +3,8 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./Home/Home.tsx";
 import Footer from "./components/Footer.tsx";
 import AppBody from "./components/AppBody.tsx";
-import RequireUser from "./auth/RequireUser.tsx";
-import Login from "./auth/Login.tsx";
+import RequireUser from "./Auth/RequireUser.tsx";
+import Login from "./Auth/Login.tsx";
 
 function App() {
   return (
