@@ -66,7 +66,13 @@ const Signup = () => {
               {...register("password")}
             />
             <Typography variant="body2" color="primary.main" textAlign="center">
-              Already have an account? <Link to={ROUTES.LOGIN}>Log in</Link>
+              Already have an account?{" "}
+              <Link
+                to={ROUTES.LOGIN}
+                sx={{ "&:hover": { color: "primary.dark" } }}
+              >
+                Log in
+              </Link>
             </Typography>
           </Stack>
           <Button

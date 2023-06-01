@@ -61,7 +61,12 @@ const ForgotPassword = () => {
             />
 
             <Typography variant="body2" color="primary.main" textAlign="center">
-              <Link to={ROUTES.LOGIN}>Back to Log In</Link>
+              <Link
+                to={ROUTES.LOGIN}
+                sx={{ "&:hover": { color: "primary.dark" } }}
+              >
+                Back to Log In
+              </Link>
             </Typography>
           </Stack>
           <Button

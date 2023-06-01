@@ -20,7 +20,7 @@ const Card = ({ children, sx, title, ...props }: CardProps) => {
       flex={1}
       {...props}
     >
-      <Typography bgcolor="primary.main" fontSize={24}>
+      <Typography bgcolor="primary.main" color="white" fontSize={24}>
         {title}
       </Typography>
       {children}

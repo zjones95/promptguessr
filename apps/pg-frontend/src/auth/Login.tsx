@@ -65,7 +65,13 @@ const Login = () => {
             />
             <Stack alignItems="center" spacing={1}>
               <Typography variant="body2" color="primary.main">
-                Don't have an account? <Link to={ROUTES.SIGNUP}>Sign up</Link>
+                Don't have an account?{" "}
+                <Link
+                  sx={{ "&:hover": { color: "primary.dark" } }}
+                  to={ROUTES.SIGNUP}
+                >
+                  Sign up
+                </Link>
               </Typography>
               <Link
                 to={ROUTES.FORGOT_PASSWORD}

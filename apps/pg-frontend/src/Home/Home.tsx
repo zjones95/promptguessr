@@ -24,6 +24,7 @@ const Home = () => {
       textAlign={{ xs: "center", lg: "left" }}
       flex={1}
       flexWrap="wrap-reverse"
+      color="white"
     >
       <Stack
         maxWidth={{ xs: "100vw", sm: 540 }}

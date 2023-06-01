@@ -7,6 +7,7 @@ import RequireUser from "./Auth/RequireUser.tsx";
 import Login from "./Auth/Login.tsx";
 import Signup from "./Auth/Signup.tsx";
 import ForgotPassword from "./Auth/ForgotPassword.tsx";
+import Lobbies from "./Lobbies/Lobbies.tsx";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
           {/* -- PUBLIC ROUTES -- */}
           {/* -- AUTHENTICATED ROUTES -- */}
           <Route element={<RequireUser />}>
-            <Route path="lobbies" element={<div>lobbies</div>} />
+            <Route path="lobbies" element={<Lobbies />} />
             <Route path="lobby/:id" element={<div>lobby - id</div>} />
             <Route path="settings" element={<div>settings</div>} />
             {/* -- AUTHENTICATED ROUTES -- */}
