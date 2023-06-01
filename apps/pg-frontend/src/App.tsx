@@ -5,6 +5,8 @@ import Footer from "./components/Footer.tsx";
 import AppBody from "./components/AppBody.tsx";
 import RequireUser from "./Auth/RequireUser.tsx";
 import Login from "./Auth/Login.tsx";
+import Signup from "./Auth/Signup.tsx";
+import ForgotPassword from "./Auth/ForgotPassword.tsx";
 
 function App() {
   return (
@@ -15,7 +17,8 @@ function App() {
           {/* -- PUBLIC ROUTES -- */}
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<div>signup</div>} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
           {/* -- PUBLIC ROUTES -- */}
           {/* -- AUTHENTICATED ROUTES -- */}
           <Route element={<RequireUser />}>

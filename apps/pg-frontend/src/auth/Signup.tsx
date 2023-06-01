@@ -7,8 +7,8 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import Link from "../components/Link";
 
-const Login = () => {
-  const { signInWithEmail } = useAuth();
+const Signup = () => {
+  const { signUpWithEmail, signInWithEmail } = useAuth();
   const navigate = useNavigate();
 
   const [error, setError] = useState(null);
@@ -20,30 +20,32 @@ const Login = () => {
     },
   });
 
-  const handleEmailSignIn = async ({
+  const handleEmailSignUp = async ({
     email,
     password,
   }: {
     email: string;
     password: string;
   }) => {
-    const { error } = await signInWithEmail(email, password);
+    const { error } = await signUpWithEmail(email, password);
 
     if (error) {
       return setError(error.message);
     }
+
+    await signInWithEmail(email, password);
 
     navigate(ROUTES.LOBBIES);
   };
 
   return (
     <Card
-      title="Login"
+      title="Sign Up"
       width={{ xs: "auto", md: 500 }}
       flex={0}
       margin={{ xs: "auto 0", md: "auto" }}
     >
-      <form onSubmit={handleSubmit(handleEmailSignIn)}>
+      <form onSubmit={handleSubmit(handleEmailSignUp)}>
         <Stack p={4} spacing={3}>
           {error && (
             <Alert severity="error">
@@ -63,32 +65,16 @@ const Login = () => {
               label="Password"
               {...register("password")}
             />
-            <Stack alignItems="center" spacing={1}>
-              <Typography variant="body2" color="primary.main">
-                Don't have an account? <Link to={ROUTES.SIGNUP}>Sign up</Link>
-              </Typography>
-              <Link
-                to={ROUTES.FORGOT_PASSWORD}
-                sx={{
-                  textAlign: "center",
-                }}
-              >
-                <Typography
-                  color="primary.main"
-                  variant="body2"
-                  sx={{ "&:hover": { color: "primary.dark" } }}
-                >
-                  Forgot Password
-                </Typography>
-              </Link>
-            </Stack>
+            <Typography variant="body2" color="primary.main" textAlign="center">
+              Already have an account? <Link to={ROUTES.LOGIN}>Log in</Link>
+            </Typography>
           </Stack>
           <Button
             type="submit"
             variant="contained"
             sx={{ height: "40px", fontSize: "18px" }}
           >
-            Log In
+            Sign Up
           </Button>
         </Stack>
       </form>
@@ -96,4 +82,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;

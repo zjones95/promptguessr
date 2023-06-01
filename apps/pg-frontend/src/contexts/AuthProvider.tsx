@@ -8,6 +8,8 @@ interface AuthContext {
   userIsLoading: boolean;
   session: Session | null;
   signInWithEmail: (email: string, password: string) => Promise<any>;
+  signUpWithEmail: (email: string, password: string) => Promise<any>;
+  resetPassword: (email: string) => Promise<any>;
   signOut: () => Promise<any>;
 }
 
@@ -16,6 +18,8 @@ const DEFAULT_AUTH_CONTEXT: AuthContext = {
   session: null,
   userIsLoading: true,
   signInWithEmail: async () => {},
+  signUpWithEmail: async () => {},
+  resetPassword: async () => {},
   signOut: async () => {},
 };
 
@@ -40,6 +44,17 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       email,
       password,
     });
+  };
+
+  const signUpWithEmail = async (email: string, password: string) => {
+    return await supabase.auth.signUp({
+      email,
+      password,
+    });
+  };
+
+  const resetPassword = async (email: string) => {
+    return await supabase.auth.resetPasswordForEmail(email);
   };
 
   const signOut = async () => {
@@ -72,6 +87,8 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         session,
         userIsLoading: loading,
         signInWithEmail,
+        signUpWithEmail,
+        resetPassword,
         signOut,
       }}
     >

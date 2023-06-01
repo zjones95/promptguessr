@@ -17,20 +17,20 @@ const HomeImageGallery = () => {
       justifyContent="center"
       sx={{
         pointerEvents: { xs: "none", lg: "auto" },
-        "& > *:nth-child(1)": {
+        "& > *:nth-of-type(1)": {
           transform: "translateX(-100px) rotate(-15deg)",
         },
-        "& > *:nth-child(3)": {
+        "& > *:nth-of-type(3)": {
           transform: "translateX(100px) rotate(15deg)",
         },
         "&:hover": {
-          "& > *:nth-child(1)": {
+          "& > *:nth-of-type(1)": {
             transform: "translateX(-175px) rotate(-20deg)",
           },
-          "& > *:nth-child(2)": {
+          "& > *:nth-of-type(2)": {
             transform: "translateY(-50px)",
           },
-          "& > *:nth-child(3)": {
+          "& > *:nth-of-type(3)": {
             transform: "translateX(175px) rotate(20deg)",
           },
         },
