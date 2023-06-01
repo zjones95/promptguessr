@@ -69,7 +69,7 @@ const ForgotPassword = () => {
             variant="contained"
             sx={{ height: "40px", fontSize: "18px" }}
           >
-            Sign Up
+            Send Email
           </Button>
         </Stack>
       </form>
