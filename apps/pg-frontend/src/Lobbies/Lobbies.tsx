@@ -1,4 +1,4 @@
-import { Stack } from "@mui/material";
+import { Button, Stack } from "@mui/material";
 import Card from "../components/Card";
 import { useEffect, useState } from "react";
 import { SAMPLE_DATA } from "./sampleData";
@@ -30,9 +30,14 @@ const Lobbies = () => {
           selectedGameId={selectedGameId}
         />
       </Card>
-      <Card title="Game Info" flex="unset" width={400} mt={0}>
-        {selectedGame && <LobbiesGameInfo game={selectedGame} />}
-      </Card>
+      <Stack spacing={2}>
+        <Card title="Game Info" flex="unset" width={350} mt={0} height="100%">
+          {selectedGame && <LobbiesGameInfo game={selectedGame} />}
+        </Card>
+        <Button sx={{ minWidth: "10px", height: "60px" }} variant="outlined">
+          Create Game
+        </Button>
+      </Stack>
     </Stack>
   );
 };

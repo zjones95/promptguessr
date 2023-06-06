@@ -1,5 +1,5 @@
 import { Game } from "../types/game.types";
-import { Table, TableBody } from "@mui/material";
+import { Button, Stack, Table, TableBody } from "@mui/material";
 import LobbiesGameRow from "./LobbiesGameRow";
 
 const LobbiesGameTable = ({

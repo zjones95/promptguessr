@@ -1,13 +1,6 @@
-import { createClient } from "@supabase/supabase-js";
-import { useMemo } from "react";
+import { useContext } from "react";
+import { SupabaseContext } from "../contexts/SupabaseProvider";
 
-const useSupabase = () => {
-  return useMemo(() => {
-    return createClient(
-      import.meta.env.VITE_REACT_APP_SUPABASE_URL,
-      import.meta.env.VITE_REACT_APP_SUPABASE_API_KEY
-    );
-  }, []);
-};
+const useSupabase = () => useContext(SupabaseContext);
 
 export default useSupabase;

@@ -2,8 +2,8 @@ import { Button, Stack, Typography } from "@mui/material";
 import HomeImageGallery from "./HomeImageGallery";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import { useAuth } from "../contexts/AuthProvider";
 import ROUTES from "../routes";
+import useAuth from "../hooks/useAuth";
 
 const Home = () => {
   const navigate = useNavigate();

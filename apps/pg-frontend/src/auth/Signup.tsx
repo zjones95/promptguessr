@@ -2,10 +2,10 @@ import { Alert, Button, Stack, TextField, Typography } from "@mui/material";
 import Card from "../components/Card";
 import { useNavigate } from "react-router-dom";
 import ROUTES from "../routes";
-import { useAuth } from "../contexts/AuthProvider";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import Link from "../components/Link";
+import useAuth from "../hooks/useAuth";
 
 const Signup = () => {
   const { signUpWithEmail, signInWithEmail } = useAuth();

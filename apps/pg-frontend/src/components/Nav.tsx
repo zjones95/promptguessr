@@ -1,7 +1,8 @@
 import { Stack, Typography, Button } from "@mui/material";
-import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../contexts/AuthProvider";
+import { useNavigate } from "react-router-dom";
+import Link from "./Link";
 import ROUTES from "../routes";
+import useAuth from "../hooks/useAuth";
 
 const Nav = () => {
   const { user, signOut } = useAuth();
@@ -23,7 +24,10 @@ const Nav = () => {
       height={64}
       align-items="center"
     >
-      <Link to="/" style={{ textDecoration: "none", color: "white" }}>
+      <Link
+        to={user ? ROUTES.LOBBIES : ROUTES.HOME}
+        sx={{ textDecoration: "none", color: "white" }}
+      >
         <Typography variant="h1">PG</Typography>
       </Link>
       <Button variant="outlined" sx={{ my: "auto" }} onClick={handleNavAction}>

@@ -1,7 +1,8 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
-import { Session, User, createClient } from "@supabase/supabase-js";
+import React, { createContext, useEffect, useState } from "react";
+import { Session, User } from "@supabase/supabase-js";
 import { useNavigate } from "react-router-dom";
 import ROUTES from "../routes";
+import useSupabase from "../hooks/useSupabase";
 
 interface AuthContext {
   user: User | null;
@@ -23,21 +24,33 @@ const DEFAULT_AUTH_CONTEXT: AuthContext = {
   signOut: async () => {},
 };
 
-const AuthContext = createContext(DEFAULT_AUTH_CONTEXT);
-
-const supabase = createClient(
-  import.meta.env.VITE_REACT_APP_SUPABASE_URL,
-  import.meta.env.VITE_REACT_APP_SUPABASE_API_KEY
-);
-
-export const useAuth = () => useContext(AuthContext);
+export const AuthContext = createContext(DEFAULT_AUTH_CONTEXT);
 
 const AuthProvider = ({ children }: { children: React.ReactNode }) => {
+  const supabase = useSupabase();
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
   const [session, setSession] = useState<Session | null>(null);
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser(session?.user ?? null);
+      setSession(session);
+      setLoading(false);
+    });
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null);
+      setSession(session);
+      setLoading(false);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
 
   const signInWithEmail = async (email: string, password: string) => {
     return await supabase.auth.signInWithPassword({
@@ -61,24 +74,6 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     await supabase.auth.signOut();
     navigate(ROUTES.HOME);
   };
-
-  useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setUser(session?.user ?? null);
-      setSession(session);
-      setLoading(false);
-    });
-
-    const {
-      data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, session) => {
-      setUser(session?.user ?? null);
-      setSession(session);
-      setLoading(false);
-    });
-
-    return () => subscription.unsubscribe();
-  }, []);
 
   return (
     <AuthContext.Provider

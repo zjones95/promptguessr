@@ -1,5 +1,8 @@
 import { Button, Stack, Typography } from "@mui/material";
 import { Game } from "../types/game.types";
+import Link from "../components/Link";
+import ROUTES from "../routes";
+
 const LobbiesGameInfo = ({ game }: { game: Game }) => {
   return (
     <Stack px={2} py={3} height="100%">
@@ -29,12 +32,14 @@ const LobbiesGameInfo = ({ game }: { game: Game }) => {
           })}
         </Stack>
       </Stack>
-      <Button
-        variant="contained"
-        sx={{ height: "40px", fontSize: "18px", mt: "auto" }}
-      >
-        Join Game
-      </Button>
+      <Link to={ROUTES.lobbyById(game.id)} mt="auto">
+        <Button
+          variant="contained"
+          sx={{ height: "40px", width: "100%", fontSize: "18px" }}
+        >
+          Join Game
+        </Button>
+      </Link>
     </Stack>
   );
 };

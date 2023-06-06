@@ -1,92 +1,92 @@
 export const SAMPLE_DATA = [
   {
     id: "30d-dfo",
-    ownerName: "Zach",
+    ownerName: "zachj95",
     players: [
       {
         id: 1,
-        name: "Zach",
+        name: "zachj95",
       },
       {
         id: 2,
-        name: "Jerry",
+        name: "jery233",
       },
       {
         id: 3,
-        name: "George",
+        name: "HelloIAmABot",
       },
       {
         id: 4,
-        name: "Chris",
+        name: "BigBot42",
       },
     ],
     maxPlayers: 6,
   },
   {
     id: "km2-p2s",
-    ownerName: "Jerry",
+    ownerName: "jerry22",
     players: [
       {
         id: 1,
-        name: "Zach",
+        name: "jerry22",
       },
       {
         id: 2,
-        name: "Jerry",
+        name: "jeff239",
       },
       {
         id: 3,
-        name: "George",
+        name: "zazza231",
       },
       {
         id: 4,
-        name: "Chris",
+        name: "cutieboy",
       },
     ],
     maxPlayers: 6,
   },
   {
     id: "9dd-fed",
-    ownerName: "George",
+    ownerName: "dodo48",
     players: [
       {
         id: 1,
-        name: "Zach",
+        name: "zachj95",
       },
       {
         id: 2,
-        name: "Jerry",
+        name: "dodo48",
       },
       {
         id: 3,
-        name: "George",
+        name: "humbug67",
       },
       {
         id: 4,
-        name: "Chris",
+        name: "hiThere408",
       },
     ],
     maxPlayers: 6,
   },
   {
     id: "3dj-sod",
-    ownerName: "Chris",
+    ownerName: "chrizzz32",
     players: [
       {
         id: 1,
-        name: "Zach",
+        name: "chrizzz32",
       },
       {
         id: 2,
-        name: "Jerry",
+        name: "jacob98",
       },
       {
         id: 3,
-        name: "George",
+        name: "zachj95",
       },
       {
         id: 4,
-        name: "Chris",
+        name: "cutieboy",
       },
     ],
     maxPlayers: 4,
