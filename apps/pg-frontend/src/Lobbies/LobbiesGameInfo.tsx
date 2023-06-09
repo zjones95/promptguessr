@@ -11,13 +11,13 @@ const LobbiesGameInfo = ({ game }: { game: Game }) => {
           <Typography variant="body1" color="primary.dark" fontWeight={600}>
             Name
           </Typography>
-          <Typography variant="body2">{game.ownerName}'s Lobby</Typography>
+          <Typography variant="body2">{game.host_name}'s Lobby</Typography>
         </Stack>
         <Stack spacing={1}>
           <Typography variant="body1" color="primary.dark" fontWeight={600}>
             Owner
           </Typography>
-          <Typography variant="body2">{game.ownerName}</Typography>
+          <Typography variant="body2">{game.host_name}</Typography>
         </Stack>
         <Stack spacing={1}>
           <Typography variant="body1" color="primary.dark" fontWeight={600}>
@@ -32,7 +32,7 @@ const LobbiesGameInfo = ({ game }: { game: Game }) => {
           })}
         </Stack>
       </Stack>
-      <Link to={ROUTES.lobbyById(game.id)} mt="auto">
+      <Link to={ROUTES.lobbyBySlug(game.slug)} mt="auto">
         <Button
           variant="contained"
           sx={{ height: "40px", width: "100%", fontSize: "18px" }}

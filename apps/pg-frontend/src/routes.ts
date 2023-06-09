@@ -5,7 +5,7 @@ const ROUTES = {
   LOBBIES: "/lobbies",
   SETTINGS: "/settings",
   FORGOT_PASSWORD: "/forgot-password",
-  lobbyById: (id: string) => `/lobbies/${id}`,
+  lobbyBySlug: (slug: string) => `/lobby/${slug}`,
 };
 
 export default ROUTES;

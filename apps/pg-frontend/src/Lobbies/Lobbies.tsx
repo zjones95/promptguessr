@@ -1,23 +1,22 @@
 import { Button, Stack } from "@mui/material";
 import Card from "../components/Card";
 import { useEffect, useState } from "react";
-import { SAMPLE_DATA } from "./sampleData";
 import LobbiesGameTable from "./LobbiesGameTable";
 import { Game } from "../types/game.types";
-import { useSearchParams } from "react-router-dom";
 import LobbiesGameInfo from "./LobbiesGameInfo";
+import useGameProvider from "../hooks/useGameProvider";
 
 const Lobbies = () => {
-  const [games, setGames] = useState<Game[]>(SAMPLE_DATA);
   const [selectedGameId, setSelectedGameId] = useState<string | null>(null);
   const [selectedGame, setSelectedGame] = useState<Game | null>(null);
 
-  const [queryParams, setQueryParams] = useSearchParams();
+  const { games } = useGameProvider();
 
   useEffect(() => {
     if (selectedGameId) {
-      setQueryParams({ ["gameId"]: selectedGameId || "" });
-      setSelectedGame(games.find((game) => game.id === selectedGameId) || null);
+      setSelectedGame(
+        games.find((game) => game.slug === selectedGameId) || null
+      );
     }
   }, [selectedGameId]);
 

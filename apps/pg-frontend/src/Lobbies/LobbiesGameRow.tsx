@@ -13,7 +13,7 @@ const LobbiesGameRow = ({
   offsetColor: boolean;
 }) => {
   const handleGameJoin = () => {
-    setSelectedGameId(game.id);
+    setSelectedGameId(game.slug);
   };
 
   return (
@@ -33,12 +33,10 @@ const LobbiesGameRow = ({
       onClick={handleGameJoin}
     >
       <TableCell>
-        <Typography variant="body1">{game.ownerName}'s Lobby</Typography>
+        <Typography variant="body1">{game.host_name}'s Lobby</Typography>
       </TableCell>
       <TableCell align="right">
-        <Typography variant="body1">
-          {game.players.length} / {game.maxPlayers}
-        </Typography>
+        <Typography variant="body1">{game.players.length} / 6</Typography>
       </TableCell>
     </TableRow>
   );

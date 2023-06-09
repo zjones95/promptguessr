@@ -3,9 +3,22 @@ export interface Player {
   name: string;
 }
 
+export interface Image {
+  id: number;
+  url: string;
+}
+
+export interface Message {
+  id: number;
+  content: string;
+}
+
 export interface Game {
-  id: string;
-  ownerName: string;
+  id: number;
+  slug: string;
+  createdAt: string;
+  host_name: string;
+  images: Image[];
   players: Player[];
-  maxPlayers: number;
+  messages: Message[];
 }

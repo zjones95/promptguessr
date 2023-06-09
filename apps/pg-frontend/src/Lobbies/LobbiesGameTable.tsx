@@ -1,5 +1,5 @@
 import { Game } from "../types/game.types";
-import { Button, Stack, Table, TableBody } from "@mui/material";
+import { Table, TableBody } from "@mui/material";
 import LobbiesGameRow from "./LobbiesGameRow";
 
 const LobbiesGameTable = ({
@@ -16,10 +16,10 @@ const LobbiesGameTable = ({
       <TableBody>
         {games.map((game, i) => (
           <LobbiesGameRow
-            key={game.id}
+            key={game.slug}
             game={game}
             setSelectedGameId={setSelectedGameId}
-            selected={selectedGameId === game.id}
+            selected={selectedGameId === game.slug}
             offsetColor={Boolean(i % 2)}
           />
         ))}
