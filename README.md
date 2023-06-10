@@ -21,7 +21,7 @@ To install all dependencies & technologies for the project, clone the project an
 
 ### Requirements
 
-This project is using Supabase, which requires a separate Supabase project `API_URL` and `API_KEY`
+This project is using Supabase, which requires a separate Supabase project `API_URL` and `API_KEY`. These files go in the `.env` file of the `/apps/pg-frontend/` directory.
 
 It's also required that you're running `node 14.0.0+`
 
