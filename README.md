@@ -1,18 +1,29 @@
-# Turborepo starter
+# PromptGuessr
 
-This is an official starter Turborepo.
+PromptGuessr is a browser-based game that is like [Pictionary](https://en.wikipedia.org/wiki/Pictionary) with an AI Image Generation twist.
 
-## Using this example
+Using a Stable Diffusion API, players can generate images when it's their turn to "draw". Once all player's images have been generated, players will try and guess what prompt a user put in to generate their image.
 
-Run the following command:
+### Technologies
 
-```sh
-npx create-turbo@latest
-```
+To install all dependencies & technologies for the project, clone the project and `cd ./promptguessr` and `npm install`
 
-## What's inside?
+#### Technologies Used
+* Turborepo
+* TypeScript
+* React (Vite)
+* tanstack-query (react-query)
+* react-router
+* Material UI
+* lodash
+* NodeJS
+* Express
 
-This Turborepo includes the following packages/apps:
+### Requirements
+
+This project is using Supabase, which requires a separate Supabase project `API_URL` and `API_KEY`
+
+It's also required that you're running `node 14.0.0+`
 
 ### Apps and Packages
 
@@ -48,34 +59,3 @@ To develop all apps and packages, run the following command:
 cd my-turborepo
 npm dev
 ```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
-# promptguessr
