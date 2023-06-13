@@ -1,0 +1,8 @@
+{
+  "run": "npm run dev",
+  "include": ["src"],
+  "web_server_port": 5173,
+  "main_branch": "main",
+  "prefab_dir": "src/prefabs",
+  "run_prettier": true
+}
