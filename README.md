@@ -47,7 +47,7 @@ This Turborepo has some additional tools already setup for you:
 To build all apps and packages, run the following command:
 
 ```
-cd my-turborepo
+cd promptguessr
 npm build
 ```
 
@@ -56,6 +56,13 @@ npm build
 To develop all apps and packages, run the following command:
 
 ```
-cd my-turborepo
-npm dev
+cd promptguessr
+npm run dev
+```
+
+To develop a specific app, run the following command:
+
+```
+cd promptguessr/apps/<app-name>
+npm run dev
 ```
