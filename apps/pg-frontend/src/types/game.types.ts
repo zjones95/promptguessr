@@ -18,7 +18,4 @@ export interface Game {
   slug: string;
   createdAt: string;
   host_name: string;
-  images: Image[];
-  players: Player[];
-  messages: Message[];
 }

@@ -3,10 +3,14 @@ import { Stack } from "@mui/material";
 import useGameProvider from "../hooks/useGameProvider";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
+import useAuth from "../hooks/useAuth";
 
 const Lobby = () => {
   const { slug } = useParams();
   const { game, setGameSlug } = useGameProvider();
+
+  const { user } = useAuth();
+  console.log({ user });
 
   useEffect(() => {
     if (slug) {

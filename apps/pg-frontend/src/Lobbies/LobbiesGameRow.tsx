@@ -12,7 +12,7 @@ const LobbiesGameRow = ({
   selected: boolean;
   offsetColor: boolean;
 }) => {
-  const handleGameJoin = () => {
+  const handleSelectGame = () => {
     setSelectedGameId(game.slug);
   };
 
@@ -30,14 +30,12 @@ const LobbiesGameRow = ({
         },
         transition: "background-color 0.1s ease-in-out",
       }}
-      onClick={handleGameJoin}
+      onClick={handleSelectGame}
     >
       <TableCell>
         <Typography variant="body1">{game.host_name}'s Lobby</Typography>
       </TableCell>
-      <TableCell align="right">
-        <Typography variant="body1">{game.players.length} / 6</Typography>
-      </TableCell>
+      <TableCell align="right"></TableCell>
     </TableRow>
   );
 };

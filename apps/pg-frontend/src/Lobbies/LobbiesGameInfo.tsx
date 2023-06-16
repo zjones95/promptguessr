@@ -19,18 +19,6 @@ const LobbiesGameInfo = ({ game }: { game: Game }) => {
           </Typography>
           <Typography variant="body2">{game.host_name}</Typography>
         </Stack>
-        <Stack spacing={1}>
-          <Typography variant="body1" color="primary.dark" fontWeight={600}>
-            Players
-          </Typography>
-          {game.players.map((player) => {
-            return (
-              <Typography variant="body2" key={player.id} color="primary.main">
-                {player.name}
-              </Typography>
-            );
-          })}
-        </Stack>
       </Stack>
       <Link to={ROUTES.lobbyBySlug(game.slug)} mt="auto">
         <Button

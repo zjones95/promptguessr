@@ -51,10 +51,8 @@ const GameProvider = ({ children }: { children: React.ReactNode }) => {
   } = useQuery(
     ["games", user],
     async () => gameSlug && getGame(supabase, gameSlug),
-    { enabled: Boolean(gameSlug), refetchInterval: 1000 }
+    { enabled: Boolean(gameSlug) }
   );
-
-  console.log({ gamesData, gameData: gameData[0] });
 
   return (
     <GameContext.Provider
