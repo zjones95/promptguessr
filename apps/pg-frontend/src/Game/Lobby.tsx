@@ -10,7 +10,8 @@ const Lobby = () => {
   const { game, setGameSlug } = useGameProvider();
 
   const { user } = useAuth();
-  console.log({ user });
+
+  console.log({ game });
 
   useEffect(() => {
     if (slug) {
@@ -21,11 +22,11 @@ const Lobby = () => {
   }, [slug]);
 
   return (
-    <Stack direction="row">
-      <Card title="Lobby" flex={3}>
-        <Stack direction="row"></Stack>
+    <Stack direction="row" flex={1} spacing={4} mt={4}>
+      <Card title="Players" flex={1} mt={0}>
+        <Stack></Stack>
       </Card>
-      <Card title="Chat" flex={1}>
+      <Card title="Game" flex={4} mt={0}>
         <Stack direction="row"></Stack>
       </Card>
     </Stack>

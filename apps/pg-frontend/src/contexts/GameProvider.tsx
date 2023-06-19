@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useState } from "react";
 import { Game } from "../types/game.types";
 import { noop } from "lodash";
 import useSupabase from "../hooks/useSupabase";
@@ -49,7 +49,7 @@ const GameProvider = ({ children }: { children: React.ReactNode }) => {
     isError: gameError,
     isLoading: gameLoading,
   } = useQuery(
-    ["games", user],
+    ["game", gameSlug],
     async () => gameSlug && getGame(supabase, gameSlug),
     { enabled: Boolean(gameSlug) }
   );
